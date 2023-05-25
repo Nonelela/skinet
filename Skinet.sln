@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinetAPI", "SkinetAPI\SkinetAPI.csproj", "{BD4F28B7-DC4A-41E7-8609-9F0B06B45646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{A45F4144-F1DB-4D99-A75C-0643EAA05D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{A3633AA5-3D94-49DA-AB53-BB7045FD8DCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD4F28B7-DC4A-41E7-8609-9F0B06B45646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4F28B7-DC4A-41E7-8609-9F0B06B45646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4F28B7-DC4A-41E7-8609-9F0B06B45646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4F28B7-DC4A-41E7-8609-9F0B06B45646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45F4144-F1DB-4D99-A75C-0643EAA05D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45F4144-F1DB-4D99-A75C-0643EAA05D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45F4144-F1DB-4D99-A75C-0643EAA05D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45F4144-F1DB-4D99-A75C-0643EAA05D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3633AA5-3D94-49DA-AB53-BB7045FD8DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3633AA5-3D94-49DA-AB53-BB7045FD8DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3633AA5-3D94-49DA-AB53-BB7045FD8DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3633AA5-3D94-49DA-AB53-BB7045FD8DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEED5BD7-8934-4A6F-BFFE-7B5DDDA5374E}
+	EndGlobalSection
+EndGlobal
