@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PagingHeaderComponent } from './paging-header/paging-header.component';
 import { PagerComponent } from './pager/pager.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 
@@ -13,12 +14,14 @@ import { PagerComponent } from './pager/pager.component';
   ],
   imports: [
     CommonModule,
-    PaginationModule.forRoot()//This is so its loaded as a sigleton. The same instance wil be used through the app
+    PaginationModule.forRoot(),//This is so its loaded as a sigleton. The same instance wil be used through the app
+    CarouselModule.forRoot()
   ],
   exports: [
     PaginationModule,
     PagingHeaderComponent,
-    PagerComponent
+    PagerComponent,
+    CarouselModule
   ]
 })
 export class SharedModule { }
