@@ -1,5 +1,6 @@
 ﻿using AutoMapper.Configuration;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SkinetAPI.Errors;
 
@@ -11,6 +12,14 @@ namespace SkinetAPI.Controllers
         public BuggyController(StoreContext storeContext)
         {
             _storeContext = storeContext;
+        }
+
+        [HttpGet("testauth")]
+        
+        //[Authorize]
+        public ActionResult<string> GetSecretText()
+        {
+            return "secrete stuff";
         }
 
         [HttpGet("notfound")]
