@@ -104,6 +104,13 @@ namespace SkinetAPI.Controllers
         public async Task<ActionResult<UserDto>> Register(RegisterDto 
              registerDto)
         {
+            if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
+            {
+                new BadRequestObjectResult(new ApiValidationErrorResponse
+                {
+                    Errors = new[] { "Email address is in use" }
+                });
+            }
             var user = new AppUser
             {
                 DisplayName = registerDto.DisplayName,

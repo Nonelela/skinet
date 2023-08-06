@@ -13,8 +13,7 @@ namespace SkinetAPI.Extensions
         public static IServiceCollection AddApplicatioServices(this IServiceCollection services, 
             IConfiguration configuration)
         {
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+
             services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
