@@ -23,9 +23,11 @@ namespace SkinetAPI.Extensions
                 var options = ConfigurationOptions.Parse(configuration.GetConnectionString("Redis"));
                 return ConnectionMultiplexer.Connect(options);
             });
+            services.AddSingleton<IResponseCacheService, ResponseCacheService>();    
             services.AddScoped<IBasketRepository, BasketRepository>();//Scoped to HttpRequest not singleton
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

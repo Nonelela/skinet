@@ -12,10 +12,13 @@ export class BasketComponent {
   constructor (public basketService: BasketService) {}
 
   incrementQuantity(item: BasketItem) {
+    alert('increment qty');
+    console.log(item);
     this.basketService.addItemToBasket(item);
   }
 
   removeItem(event: {id: number, quantity: number}) {
+    alert('basket dec');
     this.basketService.removeItemFromBasket(event.id, event.quantity);
   }
 

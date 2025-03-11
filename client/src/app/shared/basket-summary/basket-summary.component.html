@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </th>
-                <td class="align-middle"><strong>{{item.price | currency}}</strong></td>
+                <td class="align-middle"><strong>{{item.price | currency: 'R'}}</strong></td>
                 <td class="align-middle">
                     <div class="d-flex align-items-center" 
                         [class.justify-content-center]="!isBasket">
@@ -43,7 +43,7 @@
                             (click)="addBasketItem(item)"></i>
                     </div>
                 </td>
-                <td class="align-middle"><strong>{{item.price * item.quantity | currency }}</strong></td>
+                <td class="align-middle"><strong>{{item.price * item.quantity | currency: 'R' }}</strong></td>
                 <td *ngIf="isBasket" class="align-middle">
                     <a class="text-danger">
                         <i

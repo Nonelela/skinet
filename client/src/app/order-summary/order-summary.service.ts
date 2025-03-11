@@ -6,17 +6,16 @@ import { Order } from '../shared/models/order';
 @Injectable({
   providedIn: 'root'
 })
-export class OrdersService {
+export class OrderSummaryService {
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getOrdersForUser() {
-    alert('Getting order for users');
     return this.http.get<Order[]>(this.baseUrl + 'orders');
   }
 
-  getOrderDetails(id: number) {
+  getOrderSummaryDetailed(id: number) {
     return this.http.get<Order>(this.baseUrl + 'orders/' + id);
   }
 }
