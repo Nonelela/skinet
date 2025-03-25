@@ -2,9 +2,7 @@
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SkinetAPI.Dtos;
 using SkinetAPI.Errors;
 using SkinetAPI.Helpers;
@@ -29,6 +27,7 @@ namespace SkinetAPI.Controllers
             _mapper = mapper;
         }
 
+        [Cached(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
             [FromQuery]ProductSpecParams specParams)
@@ -49,6 +48,7 @@ namespace SkinetAPI.Controllers
                 specParams.PageSize, totalItems, data));
 
         }
+        [Cached(600)]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -65,12 +65,13 @@ namespace SkinetAPI.Controllers
 
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
-
+        [Cached(600)]
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
         {
             return Ok(await _productBrandRepo.ListAllAsync());
         }
+        [Cached(600)]
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
         {
