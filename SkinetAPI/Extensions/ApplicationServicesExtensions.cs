@@ -16,7 +16,7 @@ namespace SkinetAPI.Extensions
 
             services.AddDbContext<StoreContext>(opt =>
             {
-                opt.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+                opt.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {

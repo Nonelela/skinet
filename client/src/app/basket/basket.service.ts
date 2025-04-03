@@ -65,7 +65,6 @@ export class BasketService {
    }
 
    addItemToBasket(item: Product | BasketItem, quantity = 1) {
-    alert('basket service add');
     if (this.isProduct(item)) {
       item = this.mapProductItemToBasketItem(item);
     }
@@ -76,7 +75,6 @@ export class BasketService {
    }
 
    removeItemFromBasket (id: number, quantity = 1) {
-    alert('remove item from basket');
     const basket = this.getCurrentBasketValue();
     if (!basket) return;
     const item = basket.items.find(x => x.id === id);
@@ -94,7 +92,6 @@ export class BasketService {
     }
    }
   deleteBasket(basket: Basket) {
-    alert('basket delete');
     return this.http.delete(this.baseUrl + 'basket?id=' + basket.id).subscribe({
       next: () => {
         this.deleteLocalBasket();

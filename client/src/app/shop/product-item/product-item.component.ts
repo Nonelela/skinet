@@ -13,7 +13,6 @@ export class ProductItemComponent {
    constructor(private basketService: BasketService) {}
 
    addItemToBasket() {
-    alert(this.product);
     this.product && this.basketService.addItemToBasket(this.product);
    }
 }

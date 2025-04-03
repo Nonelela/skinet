@@ -12,7 +12,6 @@ export class OrdersService {
   constructor(private http: HttpClient) { }
 
   getOrdersForUser() {
-    alert('Getting order for users');
     return this.http.get<Order[]>(this.baseUrl + 'orders');
   }
 

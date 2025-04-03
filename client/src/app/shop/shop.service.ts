@@ -6,6 +6,7 @@ import { Brand } from '../shared/models/brand';
 import { Type } from '../shared/models/type';
 import { ShopParams } from '../shared/models/shopParams';
 import { map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   //Our service will be provided in our root module
@@ -15,7 +16,7 @@ import { map, Observable, of } from 'rxjs';
 })
 //Usefull for storing states (i.e loading same data when componet loads)
 export class ShopService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   products: Product[] = [];
   brands: Brand[] = [];
   types: Type[] = [];

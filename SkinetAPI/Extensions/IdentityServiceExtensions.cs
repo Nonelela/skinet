@@ -15,7 +15,7 @@ namespace SkinetAPI.Extensions
         {
             services.AddDbContext<AppIdentityDbContext>(opt =>
             {
-                opt.UseSqlite(configuration.GetConnectionString("IdentityConnection"));
+                opt.UseNpgsql(configuration.GetConnectionString("IdentityConnection"));
             });
 
             services.AddIdentityCore<AppUser>(opt =>
